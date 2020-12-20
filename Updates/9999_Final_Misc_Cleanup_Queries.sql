@@ -67,7 +67,8 @@ UPDATE conditions SET comments=CONCAT('Has Minimum Rank Exalted With Faction ID:
 UPDATE conditions SET comments=CONCAT('Alliance Player') WHERE type=6 AND value1=469 AND comments IS NULL; -- CONDITION_TEAM
 UPDATE conditions SET comments=CONCAT('Horde Player') WHERE type=6 AND value1=67 AND comments IS NULL; -- CONDITION_TEAM
 UPDATE conditions SET comments=CONCAT('Has Skill ID ',value1,', Minimum Skill Value ',value2) WHERE type=7 AND comments IS NULL; -- CONDITION_SKILL
-UPDATE conditions SET comments=CONCAT('Quest ID ',value1,' Rewarded') WHERE type=8 AND comments IS NULL; -- CONDITION_QUESTREWARDED
+UPDATE conditions SET comments=CONCAT('Quest ID ',value1,' Rewarded') WHERE type=8 AND flags=0 AND comments IS NULL; -- CONDITION_QUEST_REWARDED
+UPDATE conditions SET comments=CONCAT('Quest ID ',value1,' NOT Rewarded') WHERE type=8 AND flags=1 AND comments IS NULL; -- CONDITION_QUEST_NOT_REWARDED
 UPDATE conditions SET comments=CONCAT('Quest ID ',value1,' Taken') WHERE type=9 AND value2=0 AND comments IS NULL; -- CONDITION_QUESTTAKEN
 UPDATE conditions SET comments=CONCAT('Quest ID ',value1,' Taken AND NOT Completed') WHERE type=9 AND value2=1 AND comments IS NULL; -- CONDITION_QUESTTAKEN
 UPDATE conditions SET comments=CONCAT('Quest ID ',value1,' Taken AND Completed') WHERE type=9 AND value2=2 AND comments IS NULL; -- CONDITION_QUESTTAKEN
@@ -112,10 +113,10 @@ UPDATE conditions SET comments=CONCAT('Source of Condition''s Last Waypoint <= '
 UPDATE conditions SET comments=CONCAT('Source of Condition''s Last Waypoint >= ',value1) WHERE type=33 AND value2=2 AND comments IS NULL; -- CONDITION_LAST_WAYPOINT
 -- CONDITION_XP_USER
 UPDATE conditions SET comments=CONCAT('Player Gender: Male') WHERE type=35 AND value1=0 AND flags=0 AND comments IS NULL; -- CONDITION_GENDER
-UPDATE conditions SET comments=CONCAT('Player Gender: Femal') WHERE type=35 AND value1=1 AND flags=0 AND comments IS NULL; -- CONDITION_GENDER
+UPDATE conditions SET comments=CONCAT('Player Gender: Female') WHERE type=35 AND value1=1 AND flags=0 AND comments IS NULL; -- CONDITION_GENDER
 UPDATE conditions SET comments=CONCAT('Player Gender: None') WHERE type=35 AND value1=2 AND flags=0 AND comments IS NULL; -- CONDITION_GENDER
 UPDATE conditions SET comments=CONCAT('NPC Gender: Male') WHERE type=35 AND value1=0 AND flags=2 AND comments IS NULL; -- CONDITION_GENDER
-UPDATE conditions SET comments=CONCAT('NPC Gender: Femal') WHERE type=35 AND value1=1 AND flags=2 AND comments IS NULL; -- CONDITION_GENDER
+UPDATE conditions SET comments=CONCAT('NPC Gender: Female') WHERE type=35 AND value1=1 AND flags=2 AND comments IS NULL; -- CONDITION_GENDER
 UPDATE conditions SET comments=CONCAT('NPC Gender: None') WHERE type=35 AND value1=2 AND flags=2 AND comments IS NULL; -- CONDITION_GENDER
 UPDATE conditions SET comments=CONCAT('Player is Dead') WHERE type=36 AND value1=0 AND value2=0 AND comments IS NULL; -- CONDITION_DEAD_OR_AWAY
 UPDATE conditions SET comments=CONCAT('All Players in Group are Dead') WHERE type=36 AND value1=1 AND value2=0 AND comments IS NULL; -- CONDITION_DEAD_OR_AWAY

@@ -304,6 +304,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_pv
 (@CGUID+115,0,8,0,0,0,0,NULL),
 (@CGUID+116,0,8,0,0,0,0,NULL);
 
+DELETE FROM `creature_movement_template` WHERE entry IN (26893,26690,26691,26692);
 INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `orientation`) VALUES
 -- Grauf 26893
 (26893,0,1,310.216,-510.53,120.549,0,0,100),
@@ -333,7 +334,19 @@ INSERT INTO `creature_movement_template` (`entry`, `pathId`, `point`, `position_
 (26893,0,25,451.982,-518.251,120.027,0,0,100),
 (26893,0,26,399.261,-515.072,121.119,0,0,100),
 (26893,0,27,350.61,-516.39,122.314,0,0,100),
-(26893,0,28,325.822,-515.377,121.175,0,0,100);
+(26893,0,28,325.822,-515.377,121.175,0,0,100),
+-- Ymirjar Warrior 26690
+(26690,0,1,477.580,-484.558,104.738,0,0,4.759),
+(26690,0,2,478.309,-511.049,104.724,0,0,3.180),
+(26690,0,3,311.576,-509.201,104.407,0,0,3.180),
+-- Ymirjar Witch Doctor 26691
+(26691,0,1,477.580,-484.558,104.738,0,0,4.759),
+(26691,0,2,478.309,-511.049,104.724,0,0,3.180),
+(26691,0,3,311.576,-509.201,104.407,0,0,3.180),
+-- Ymirjar Harpooner 26692
+(26692,0,1,477.580,-484.558,104.738,0,0,4.759),
+(26692,0,2,478.309,-511.049,104.724,0,0,3.180),
+(26692,0,3,311.576,-509.201,104.407,0,0,3.180);
 
 
 INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `orientation`) VALUES
